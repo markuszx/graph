@@ -67,6 +67,29 @@ const adjList2 = {
 
 function printDepthFirst(start) {
     // your code here
+
+    // Create a queue and enqueue the starting node
+    let stack = [start]
+    //Create a set to store visited nodes
+    let visited = new Set().add(start)
+   //While the queue is not empty, repeat steps 4-6
+    while(stack.length > 0){
+
+        //Dequeue the first node
+    let popped = stack.pop()
+    //DO THE THING THAT YOU NEED TO FOR THE DEQUEUED NODE
+    console.log(popped)
+
+    //For each unvisited neighbor, add it to the visited nodes and to the back of the queue
+
+   adjList2[popped].forEach(node => {
+       if(!visited.has(node)){
+       stack.push(node)
+        visited.add(node)
+       }
+
+   });
+    }
 }
 
 console.log("First Test:")

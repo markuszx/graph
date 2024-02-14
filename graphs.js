@@ -1,3 +1,4 @@
+
 const adjList1 = {
     1: [2, 5],
     2: [1, 3, 5],
@@ -9,6 +10,35 @@ const adjList1 = {
 
 function printBreadthFirst(start) {
     // your code here
+    /*
+     Write a function called printBreadthFirst
+    that will traverse the given graph breadth-first,
+     printing each node when visited exactly once, on a newline.
+     */
+
+
+    // Create a queue and enqueue the starting node
+      let q = [start]
+    //Create a set to store visited nodes
+    let visited = new Set().add(start)
+   //While the queue is not empty, repeat steps 4-6
+    while(q.length > 0){
+
+        //Dequeue the first node
+    let dequeued = q.shift()
+    //DO THE THING THAT YOU NEED TO FOR THE DEQUEUED NODE
+    console.log(dequeued)
+
+    //For each unvisited neighbor, add it to the visited nodes and to the back of the queue
+
+   adjList1[dequeued].forEach(node => {
+       if(!visited.has(node)){
+        q.push(node)
+        visited.add(node)
+       }
+
+   });
+    }
 
 
 }
